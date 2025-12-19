@@ -384,15 +384,25 @@ def shorikai_stax_1_show():
         "content_shorikai_stax_1_2": "法术力基础",
         "img_url_shorikai_stax_1_2": "/static/shorikai_stax_1_show/shorkai_mana.jpg",
 
-        "content_shorikai_stax_1_3": "锁",
+        "content_shorikai_stax_1_3": "神器&结界锁",
         "img_url_shorikai_stax_1_3": "/static/shorikai_stax_1_show/shorkai_stax.jpg",
 
-        "content_shorikai_stax_1_4": "控",
+        "content_shorikai_stax_1_4": "控制咒语",
         "img_url_shorikai_stax_1_4": "/static/shorikai_stax_1_show/shorkai_counter.jpg",
         "img_url_shorikai_stax_1_5": "/static/shorikai_stax_1_show/shorkai_removal.jpg",
 
+        "content_shorikai_stax_1_6": "赚牌&法术力引擎",
+        "img_url_shorikai_stax_1_6": "/static/shorikai_stax_1_show/shorkai_draw.jpg",
 
-        
+        "content_shorikai_stax_1_7": "实用法术&导师",
+        "img_url_shorikai_stax_1_7": "/static/shorikai_stax_1_show/shorkai_tutor.jpg",
+
+        "content_shorikai_stax_1_8": "生物&鹏洛客",
+        "img_url_shorikai_stax_1_8": "/static/shorikai_stax_1_show/shorkai_creature.jpg",
+
+        "content_shorikai_stax_1_9": "值得纪念的版本",
+        "img_url_shorikai_stax_1_9": "/static/shorikai_stax_1_show/shorkai_mox_opal.jpg",
+        "img_url_shorikai_stax_1_10": "/static/shorikai_stax_1_show/shorkai_tezz.jpg",
         }
     return render_template("shorikai_stax_1.html", post=post)
 

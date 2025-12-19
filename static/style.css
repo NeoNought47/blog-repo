@@ -160,18 +160,18 @@ body.dark-mode .theme-toggle:hover {
 }
 
 
-/* figurecaption 文字样式 */
+/* 图片下面的灰色小字 figurecaption 文字样式 */
 figure {
   margin: 1em 0;
   text-align: center;
 }
 
-/* figurecaption 文字样式 */
+/* 图片下面的灰色小字 figurecaption 文字样式 */
 figurecaption {
   text-align: center;
   font-size: 0.85em;
   color: #888;
-  margin-top: 0.3em;
+  margin-top: 0.1em;
   font-style: italic;
 }
 
