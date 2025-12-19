@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ post.heading }}
+{% endblock %}
+
+{% block page_heading %}
+    {{ post.heading }}
+{% endblock %}
+
+{% block content %}
+<div class="meta">
+    📅 {{ post.date }} &nbsp;&nbsp; ✍️ {{ post.author }} &nbsp;&nbsp; 🗂️ {{ post.category }}
+</div>
+
+<div class="content0">
+    <p>{{ post.content_shorikai_stax_1_0 | trim | replace('\n', '<br>') | safe }}</p>
+</div>
+
+<h2>{{ post.content_shorikai_stax_1_1 }}</h2>
+<figure>
+    <img src="{{ post.img_url_shorikai_stax_1_1 }}">
+    <figurecaption>法语版还是zqy从法国带回来的</figurecaption>
+</figure>
+
+<h2>{{ post.content_shorikai_stax_1_2 }}</h2>
+<img src="{{ post.img_url_shorikai_stax_1_2 }}">
+
+<h2>{{ post.content_shorikai_stax_1_3 }}</h2>
+<img src="{{ post.img_url_shorikai_stax_1_3 }}">
+
+<h2>{{ post.content_shorikai_stax_1_4 }}</h2>
+<img src="{{ post.img_url_shorikai_stax_1_4 }}">
+<img src="{{ post.img_url_shorikai_stax_1_5 }}">
+
+{% endblock %}

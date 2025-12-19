@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ post.heading }}{% endblock %}
+
+{% block page_heading %}
+    {{ post.heading }}
+{% endblock %}
+
+{% block content %}
+    <!-- 你的正文内容 -->
+    {{ post.body|safe }}
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ post.heading }}{% endblock %}
+
+{% block page_heading %}{{ post.heading }}{% endblock %}
+
+{% block content %}
+
+<!-- 文章元信息 -->
+<div class="meta">
+    <strong>作者：</strong>{{ post.author }} |
+    <strong>分类：</strong>{{ post.category }} |
+    <strong>日期：</strong>{{ post.date }}
+</div>
+
+<hr>
+
+<!-- 引言 -->
+<div class="intro-block">
+    {{ post.content_intro }}
+</div>
+
+<!-- 第一部分：套牌简介 -->
+<h2>{{ post.content_section1 }}</h2>
+<div class="content">
+    {{ post.content_body1|safe }}
+</div>
+
+<!-- 第二部分：核心策略 -->
+<h2>{{ post.content_section2 }}</h2>
+<div class="content">
+    {{ post.content_body2|safe }}
+</div>
+
+<!-- 第三部分：关键单卡 -->
+<h2>{{ post.content_section3 }}</h2>
+<div class="content">
+    {{ post.content_body3|safe }}
+</div>
+
+<!-- 结尾 -->
+<div class="content">
+    {{ post.content_conclusion|safe }}
+</div>
+
+{% endblock %}

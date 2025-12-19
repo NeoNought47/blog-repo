@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+<!-- 填充浏览器标题到base -->
+{% block title %}My Blog 技术栈{% endblock %}
+
+<!-- 填充标题到base -->
+{% block page_heading %}
+    <span class="index-page-Neos-Blog">Neo's Blog</span>
+{% endblock %}
+
+<!-- 填充内容到base -->
+{% block content %}
+
+<!-- 这里开始才应该写内容 -->
+<h1>目录</h1>
+<a href="{{ url_for('death_stranding1') }}">1. 一年前在死亡搁浅留下的建筑和指示牌</a> <br>
+<a href="{{ url_for('gamma_doppler') }}">2. CS2 多普勒&伽马多普勒款式模版挑选指南</a> <br>
+<!-- <a href="{{ url_for('blue_farm_primer') }}">3. 万智牌 cEDH Blue Farm 套牌指南</a> <br> -->
+ <a>3. 万智牌 cEDH Blue Farm 套牌指南</a> <br>
+<a href="{{ url_for('neos_cs2_inv') }}">4. 2025年CS2自用主战武器皮肤纪念</a> <br>
+<!-- <a href="{{ url_for('kinnan_cedh_primer') }}">5. 万智牌 cEDH 持绊逸才季宁 套牌指南</a> <br> -->
+ <a>5. 万智牌 cEDH 持绊逸才季宁 套牌指南</a> <br>
+<!-- <a href="{{ url_for('cs_market_crash') }}">6. 2025年10月23日CSGO饰品市场崩盘</a> <br> -->
+ <a>6. 2025年10月23日CSGO饰品市场崩盘</a> <br>
+<a href="{{ url_for('shorikai_stax_1_show') }}">7. 万智牌EDH(8分/Challenge/Optimised)创机胜利械套牌展示</a> <br>
+
+<h1>技术栈</h1>
+<p>本博客使用 <strong>Flask</strong> 框架开发。</p>
+
+<ul>
+    <li><strong>后端：</strong>Flask</li>
+    <li><strong>模板引擎：</strong>Jinja2</li>
+    <li><strong>前端：</strong>HTML5 + CSS3 + Java Script</li>
+</ul>
+
+{% endblock %}

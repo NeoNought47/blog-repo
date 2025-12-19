@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ post.heading }}
+{% endblock %}
+
+{% block page_heading %}
+    {{ post.heading }}
+{% endblock %}
+
+{% block content %}
+<div class="meta">
+    📅 {{ post.date }} &nbsp;&nbsp; ✍️ {{ post.author }} &nbsp;&nbsp; 💾 {{ post.category }}
+</div>
+
+<p class="content">
+  {{ post.content1 | trim | replace('\n', '<br>') | safe }}
+</p>
+<img src="{{ post.image_url1 }}" alt="发电机和雨亭图片">
+
+<p class="content">
+  {{ post.content2 | trim | replace('\n', '<br>') | safe }}
+</p>
+<img src="{{ post.image_url2 }}" alt="摩托加速指示牌">
+<img src="{{ post.image_url3 }}" alt="额外指示牌图片">
+
+<p class="content">
+  {{ post.content3 | trim | replace('\n', '<br>') | safe }}
+</p>
+<img src="{{ post.image_url4 }}" alt="Lambda 标志指示牌">
+{% endblock %}

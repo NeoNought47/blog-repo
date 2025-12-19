@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ post.heading }}
+{% endblock %}
+
+{% block page_heading %}
+    {{ post.heading }}
+{% endblock %}
+
+{% block content %}
+<div class="meta">
+    📅 {{ post.date }} &nbsp;&nbsp; ✍️ {{ post.author }} &nbsp;&nbsp; 📂 {{ post.category }}
+</div>
+
+<div class="intro-block">
+    <p>{{ post.content_neo_cs_skins_0 | trim | replace('\n', '<br>') | safe }}</p>
+</div>
+<img src="{{ post.img_url_sh0 }}" alt="武器展示">
+
+<h2>{{ post.heading2_knife }}</h2>
+<p>{{ post.content_article4_1 }}</p>
+<img src="{{ post.img_url_sh1 }}" alt="刀皮肤">
+<p>{{ post.content_article4_1.5 }}</p>
+
+<h2>{{ post.heading2_pistols }}</h2>
+<p>{{ post.content_article4_2 }}</p>
+<p>{{ post.content_article4_3 }}</p>
+<img src="{{ post.img_url_sh2 }}" alt="USP 凯门鳄">
+<p>{{ post.content_article4_4 }}</p>
+<img src="{{ post.img_url_sh3 }}" alt="USP 脑洞大开">
+<p>{{ post.content_article4_5 }}</p>
+<img src="{{ post.img_url_sh4 }}" alt="FN57">
+<p>{{ post.content_article4_6 }}</p>
+<img src="{{ post.img_url_sh5 }}" alt="P250">
+<p>{{ post.content_article4_7 }}</p>
+<img src="{{ post.img_url_sh6 }}" alt="Glock 绿宝石">
+<p>{{ post.content_article4_8 }}</p>
+<img src="{{ post.img_url_sh7 }}" alt="Tec-9">
+
+<h2>{{ post.heading2_smg }}</h2>
+<p>{{ post.content_article4_9 }}</p>
+<p>{{ post.content_article4_10 }}</p>
+<img src="{{ post.img_url_sh8 }}" alt="Mac-10">
+<p>{{ post.content_article4_11 }}</p>
+<img src="{{ post.img_url_sh9 }}" alt="Saiba Oni">
+<p>{{ post.content_article4_12 }}</p>
+<img src="{{ post.img_url_sh10 }}" alt="MP9 富士山">
+<p>{{ post.content_article4_13 }}</p>
+<img src="{{ post.img_url_sh11 }}" alt="独角兽枪">
+<p>{{ post.content_article4_14 }}</p>
+<img src="{{ post.img_url_sh12 }}" alt="随机绿枪">
+
+<h2>{{ post.heading2_rifles }}</h2>
+<p>{{ post.content_article4_15 }}</p>
+<img src="{{ post.img_url_sh13 }}" alt="AK 淬火">
+<p>{{ post.content_article4_16 }}</p>
+<img src="{{ post.img_url_sh14 }}" alt="AK 简洁橙贴">
+<p>{{ post.content_article4_17 }}</p>
+<img src="{{ post.img_url_sh15 }}" alt="三联泰坦">
+<p>{{ post.content_article4_18 }}</p>
+<img src="{{ post.img_url_sh16 }}" alt="莫言 墨岩">
+
+<h2>{{ post.heading2_m4a1 }}</h2>
+<p>{{ post.content_article4_19 }}</p>
+<img src="{{ post.img_url_sh17 }}" alt="A1 冒险家乐园">
+<p>{{ post.content_article4_20 }}</p>
+<img src="{{ post.img_url_sh18 }}" alt="A1 理财枪">
+
+<h2>{{ post.heading2_m4a4 }}</h2>
+<p>{{ post.content_article4_21 }}</p>
+<img src="{{ post.img_url_sh19 }}" alt="M4A4 二希莫夫">
+
+<h2>{{ post.heading2_galil }}</h2>
+<p>{{ post.content_article4_22 }}</p>
+<img src="{{ post.img_url_sh20 }}" alt="Galil 小绿枪">
+
+<h2>{{ post.heading2_sg553 }}</h2>
+<p>{{ post.content_article4_23 }}</p>
+<img src="{{ post.img_url_sh21 }}" alt="SG553 意式拉力">
+<p>{{ post.content_article4_24 }}</p>
+<img src="{{ post.img_url_sh22 }}" alt="SG553 彩枪">
+
+<h2>{{ post.heading2_awp }}</h2>
+<p>{{ post.content_article4_25 }}</p>
+<img src="{{ post.img_url_sh23 }}" alt="AWP VP贴">
+
+<h2>{{ post.heading2_ending }}</h2>
+<h3>{{ post.heading3_first_knife }}</h3>
+<p>{{ post.content_article4_26 }}</p>
+<p style="color:gray; font-size:0.9em;">{{ post.content_article4_26_note }}</p>
+<img src="{{ post.img_url_sh24 }}" alt="第一把刀">
+{% endblock %}

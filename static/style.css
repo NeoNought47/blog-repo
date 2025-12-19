@@ -1,0 +1,183 @@
+/* ===== 全站基础 ===== */
+body {
+  font-family:
+    "PingFang SC",
+    "Microsoft YaHei UI",
+    "Noto Sans Rounded",
+    "Source Han Rounded",
+    "MiSans", "OPPOSans", "HarmonyOS Sans",
+    "Helvetica", "Arial", sans-serif, "Courier New", Courier, 
+    "Lucida Console", "Source Code Pro", "Fira Code", Monaco, monospace;
+
+
+  background-color: #fdf6e3;
+  color: #333;
+  max-width: 700px;
+  margin: 3em auto;
+  line-height: 1.8;
+  padding: 0 20px;
+}
+
+/* 标题 */
+h1 {
+  font-size: 2em;
+  margin-bottom: 0.4em;
+}
+
+/* 分隔线 */
+hr {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 1.2em 0;
+}
+
+/* 日期 + 作者条 */
+.meta {
+  font-size: 0.9em;
+  color: #888;
+  margin-bottom: 0.8em;   /* 再缩小一点间距 */
+}
+
+/* 正文段落 */
+.content {
+  margin: 0.8em 0 1.6em 0; /* 顶 0.8em, 底 1.6em */
+  line-height: 1.8;
+  text-align: left;        /* 段内左对齐 */
+}
+
+/* 图片统一样式 */
+img {
+  width: 100%;
+  border-radius: 6px;
+  margin: 1em 0;
+}
+
+.footer {
+  text-align: center;
+  font-size: 0.8em;
+  color: #999;
+  margin-top: 4em;
+}
+
+.footer-note {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+/* 前言引用块效果 */
+.intro-block {
+  border-left: 4px solid #ccc;
+  padding-left: 1em;
+  color: #555; /* 比正文浅一点 */
+  margin: 1.5em 0;
+  font-size: 1.05em;
+  line-height: 1.7;
+  background-color: transparent; /* 去掉白色背景 */
+}
+
+.home-icon {
+    position: absolute;
+    top: 10px;
+    left: 20px; /* 向右移动一点 */
+    display: inline-block;
+}
+
+.icon-img {
+    width: 100px;    /* 放大图标 */
+    height: 100px;
+    cursor: pointer;
+}
+
+a {
+    color: #556B2F;          /* 修改为深灰色或其他你想要的颜色 */
+}
+
+a:hover {
+    color: #CC0000;          /* 鼠标悬停时变红 */
+    text-decoration: underline;  /* 悬停时添加下划线（可选） */
+}
+
+.index-page-Neos-Blog {
+  font-family: "Courier New", Courier, "Fira Code", "Source Code Pro", monospace;
+}
+.index-page-Neos-Blog {
+  font-size: 1.5em;
+}
+
+/* ===== 夜间模式切换按钮 ===== */
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: transparent;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background-color: #f0f0f0;
+  transform: scale(1.1);
+}
+
+/* ===== 夜间模式样式 ===== */
+body.dark-mode {
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+}
+
+body.dark-mode a {
+  color: #88b388;
+}
+
+body.dark-mode a:hover {
+  color: #ff6b6b;
+}
+
+body.dark-mode hr {
+  border-top: 1px solid #444;
+}
+
+body.dark-mode .intro-block {
+  border-left: 4px solid #666;
+  color: #bbb;
+}
+
+body.dark-mode .meta {
+  color: #999;
+}
+
+body.dark-mode .theme-toggle {
+  border-color: #666;
+}
+
+body.dark-mode .theme-toggle:hover {
+  background-color: #2a2a2a;
+}
+
+
+/* figurecaption 文字样式 */
+figure {
+  margin: 1em 0;
+  text-align: center;
+}
+
+/* figurecaption 文字样式 */
+figurecaption {
+  text-align: center;
+  font-size: 0.85em;
+  color: #888;
+  margin-top: 0.3em;
+  font-style: italic;
+}
+
+body.dark-mode figurecaption {
+  color: #aaa;
+}
+
+
+

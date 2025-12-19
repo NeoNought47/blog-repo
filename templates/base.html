@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.png') }}">
+    <!-- 给浏览器标题挖坑 -->
+    <title>{% block title %}默认标题{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css', v=4) }}">
+</head>
+<body>
+
+    <!-- 左上角图标（点击跳转首页） -->
+    <a href="/" class="home-icon">
+        <img src="{{ url_for('static', filename='favicon.png') }}" alt="Home" class="icon-img">
+    </a>
+
+    <!-- 右上角夜间模式切换按钮 -->
+    <button id="theme-toggle" class="theme-toggle">🌙</button>
+
+    <!-- 文章heading标题坑 -->
+    <h1>{% block page_heading %}{% endblock %}</h1>
+    <hr>
+
+    <!-- 文章正文坑 -->
+    {% block content %}
+    {% endblock %}
+
+    <!-- 默认所有都有的footer -->
+    <footer class="footer">
+        <hr>
+        <p class="footer-note">— NeoNought 2025 —</p>
+    </footer>
+
+    <!-- 引入 JavaScript 文件 -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>

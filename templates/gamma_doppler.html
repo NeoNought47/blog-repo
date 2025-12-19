@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ post.heading }}
+{% endblock %}
+
+{% block page_heading %}
+    {{ post.heading }}
+{% endblock %}
+
+{% block content %}
+<div class="meta">
+    📅 {{ post.date }} &nbsp;&nbsp; ✍️ {{ post.author }} &nbsp;&nbsp; 🗂️ {{ post.category }}
+</div>
+
+<!-- 引言块 -->
+<div class="intro-block">
+    <p>{{ post.content0 | trim | replace('\n', '<br>') | safe }}</p>
+</div>
+
+<!-- ▼ 多普勒（Doppler） -->
+<h2>{{ post.heading2 }}</h2>
+<p class="content">{{ post.content1 | trim | replace('\n', '<br>') | safe }}</p>
+
+<h3>{{ post.heading3_1 }}</h3>
+<p class="content">{{ post.content2 }}</p>
+<img src="{{ post.image_url_dopplerp1_1 }}" alt="m9 phase 1">
+<img src="{{ post.image_url_dopplerp1_2 }}" alt="kara phase 1">
+
+<h3>{{ post.heading3_2 }}</h3>
+<p class="content">{{ post.content3 }}</p>
+<img src="{{ post.image_url_dopplerp2_1 }}" alt="m9 phase 2">
+<img src="{{ post.image_url_dopplerp2_2 }}" alt="kara phase 2">
+
+<h3>{{ post.heading3_3 }}</h3>
+<p class="content">{{ post.content4 }}</p>
+<img src="{{ post.image_url_dopplerp3 }}" alt="m9 phase 3">
+<img src="{{ post.image_url_dopplerp3_kara }}" alt="kara phase 3">
+<img src="{{ post.image_url_dopplerp4 }}" alt="m9 phase 4">
+<img src="{{ post.image_url_dopplerp4_kara }}" alt="kara phase 4">
+
+<h3>{{ post.heading3_4 }}</h3>
+<p class="content">{{ post.content5 }}</p>
+<img src="{{ post.image_url_ruby_1 }}" alt="m9 ruby">
+<img src="{{ post.image_url_ruby_2 }}" alt="kara ruby">
+
+<h3>{{ post.heading3_5 }}</h3>
+<p class="content">{{ post.content6 }}</p>
+<img src="{{ post.image_url_sap_1 }}" alt="m9 sapphire">
+<img src="{{ post.image_url_sap_2 }}" alt="kara sapphire">
+
+<h3>{{ post.heading3_6 }}</h3>
+<p class="content">{{ post.content7 }}</p>
+<img src="{{ post.image_url_bp_1 }}" alt="m9 black-pearl">
+<img src="{{ post.image_url_bp_2 }}" alt="kara black-pearl">
+
+<!-- ▼ 伽马多普勒（Gamma Doppler） -->
+<h2>{{ post.heading2_gd }}</h2>
+<p class="content">{{ post.content8 | trim | replace('\n', '<br>') | safe }}</p>
+
+<h3>{{ post.heading3_7 }}</h3>
+<p class="content">{{ post.content9 }}</p>
+<img src="{{ post.image_url_gd_1 }}" alt="m9 gamma p1">
+<img src="{{ post.image_url_gd_2 }}" alt="kara gamma p1">
+<p class="content">{{ post.content9_1 | safe }}</p>
+
+<h3>{{ post.heading3_8 }}</h3>
+<p class="content">{{ post.content10 }}</p>
+<img src="{{ post.image_url_gd_3 }}" alt="m9 gamma p2">
+<img src="{{ post.image_url_gd_4 }}" alt="kara gamma p2">
+<p class="content">{{ post.content9_2 | safe }}</p>
+
+<h3>{{ post.heading3_9 }}</h3>
+<p class="content">{{ post.content11 }}</p>
+<img src="{{ post.image_url_gd_5 }}" alt="m9 gamma p3">
+<img src="{{ post.image_url_gd_6 }}" alt="kara gamma p3">
+<p class="content">{{ post.content9_3 | safe }}</p>
+
+<h3>{{ post.heading3_10 }}</h3>
+<p class="content">{{ post.content12 }}</p>
+<img src="{{ post.image_url_gd_7 }}" alt="m9 gamma p4">
+<img src="{{ post.image_url_gd_8 }}" alt="kara gamma p4">
+<p class="content">{{ post.content9_4 | safe }}</p>
+
+<h3>{{ post.heading3_11 }}</h3>
+<p class="content">{{ post.content13 }}</p>
+<img src="{{ post.image_url_gd_9 }}" alt="m9 emerald">
+<img src="{{ post.image_url_gd_10 }}" alt="kara emerald">
+<p class="content">{{ post.content9_5 | safe }}</p>
+
+<!-- ▼ 关于刀身上的斑 -->
+{% if post.heading2_notice %}
+    <h2>{{ post.heading2_notice }}</h2>
+    <p class="content">{{ post.content14 }}</p>
+    <img src="{{ post.image_url_gd_11 }}" alt="白斑">
+    <p class="content">{{ post.content15 }}</p>
+    <img src="{{ post.image_url_gd_13 }}" alt="黑斑">
+{% endif %}
+{% endblock %}
