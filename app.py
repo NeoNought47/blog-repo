@@ -2,6 +2,7 @@ import textwrap
 from flask import Flask, render_template
 from datetime import datetime
 import markdown
+import json
 
 app = Flask(__name__)
 
@@ -12,12 +13,14 @@ def index():
     }
     return render_template('index.html', post=post)
 
-@app.route('/articles/0')
+
+
+@app.route('/articles/00')
 def testing_page():
     post = {
         "heading": f"This is the blog testing page | 测试页面",
         "author": "NeoNought",
-        "category": "Computer Science", 
+        "categories": ["Computer Science"], 
         "date": "June 30, 2025",
         "content": 
         '''
@@ -32,15 +35,14 @@ def testing_page():
     }
     return render_template('testing_page.html', post=post)
 
-@app.route('/articles/1')
+@app.route('/articles/01')
 def death_stranding1():
     post = {
         "heading": "一年前在死亡搁浅留下的建筑和指示牌",
         "author": "NeoNought",
-        "category": "Video Games", 
+        "categories": ["Video Games"], 
         "date": "June 30, 2025",
 
-        # ------- 正文段落去掉缩进 & 首尾空行 -------
         "content1": textwrap.dedent("""\
             刚开始玩死亡搁浅1的时候建了一些发电机和雨亭，前几天看到都有一千多赞了
         """).strip(),
@@ -62,7 +64,7 @@ def death_stranding1():
     }
     return render_template("death_stranding1.html", post=post)
 
-@app.route('/articles/2')
+@app.route('/articles/02')
 def gamma_doppler():
 
     def info_text(phase):
@@ -81,7 +83,7 @@ def gamma_doppler():
         "heading": "CS2 多普勒&伽马多普勒款式挑选指南",
         "author": "NeoNought",
         "date": "June 31 2025",
-        "category": "Video Games",
+        "categories": ["Video Games"],
 
         "content0": """多普勒和伽马多普勒都有款式(phase)之分，不同款式之间都有着一些差异。
         而相同款式之间还有很多不同的模版(pattern template)。
@@ -171,12 +173,13 @@ def gamma_doppler():
     }
     return render_template("gamma_doppler.html", post=post)
 
-@app.route('/articles/3')
+#### 文章03 05 06 都没开始写
+@app.route('/articles/03')
 def blue_farm_primer():
     post = {
         "heading": "万智牌 cEDH Blue Farm 套牌指南",
         "author": "NeoNought",
-        "category": "Magic the Gathering",
+        "categories": ["Magic the Gathering", "Trading Card Games"],
         "date": "July 3, 2025",
         "content_intro":
         '''
@@ -231,12 +234,12 @@ def blue_farm_primer():
     }
     return render_template("blue_farm_primer.html", post=post)
 
-@app.route('/articles/4')
+@app.route('/articles/04')
 def neos_cs2_inv():
     post = {
         "heading": "2025年CS2自用主战武器皮肤纪念",
         "author": "NeoNought",
-        "category": "Video Games",
+        "categories": ["Video Games"],
         "date": "July 5 2025",
 
         "content_neo_cs_skins_0": 
@@ -329,16 +332,12 @@ def neos_cs2_inv():
     }
     return render_template("neos_cs2_inv.html", post=post)
 
-
-# 还没开始写
-# 还没开始写
-# 还没开始写
-@app.route('/articles/5')
+@app.route('/articles/05')
 def kinnan_cedh_primer():
     post = {
         "heading": "万智牌 cEDH Kinnan 套牌指南",
         "author": "NeoNought",
-        "category": "Magic the Gathering",
+        "categories": ["Magic the Gathering", "Trading Card Games"],
         "date": "Oct 12 2025",
         "content_kinnan_cedh_0": 
         ''' 
@@ -347,12 +346,12 @@ def kinnan_cedh_primer():
     }
     return render_template("kinnan_cedh.html", post=post)
 
-@app.route('/articles/6')
+@app.route('/articles/06')
 def cs_market_crash():
     post = {
         "heading": "2025年CS2饰品市场崩盘分析",
         "author": "NeoNought",
-        "category": "Video Games",
+        "categories": ["Video Games"],
         "date": "Oct 23 2025",
         "content_cs_market_crash_0": 
         ''' 
@@ -361,12 +360,12 @@ def cs_market_crash():
     }
     return render_template("cs_market_crash.html", post=post)
 
-@app.route('/articles/7')
+@app.route('/articles/07')
 def shorikai_stax_1_show():
     post = {
         "heading": "万智牌EDH(8分/Challenge/Optimised)创机胜利械套牌展示",
         "author": "NeoNought",
-        "category": "Magic the Gathering, Trading Card Games, Neo's Collection",
+        "categories": ["Magic the Gathering", "Trading Card Games", "Neo's Collection"],
         "date": "Nov 20 2025",
 
         "content_shorikai_stax_1_0": textwrap.dedent('''\
@@ -382,17 +381,14 @@ def shorikai_stax_1_show():
         "img_url_shorikai_stax_1_1": "/static/shorikai_stax_1_show/shorkai_commander.jpg",
 
         "content_shorikai_stax_1_2": "法术力基础",
-        "img_url_shorikai_stax_1_2": "/static/shorikai_stax_1_show/shorkai_mana.jpg",
+        "img_url_shorikai_stax_1_2": "/static/shorikai_stax_1_show/shorikai_mana.jpg",
+        "img_url_shorikai_stax_1_5": "/static/shorikai_stax_1_show/shorikai_mana2.jpg",
 
-        "content_shorikai_stax_1_3": "神器&结界锁",
-        "img_url_shorikai_stax_1_3": "/static/shorikai_stax_1_show/shorkai_stax.jpg",
+        "content_shorikai_stax_1_3": "神器&结界锁&赚牌引擎",
+        "img_url_shorikai_stax_1_3": "/static/shorikai_stax_1_show/shorkai_draw.jpg",
 
         "content_shorikai_stax_1_4": "控制咒语",
         "img_url_shorikai_stax_1_4": "/static/shorikai_stax_1_show/shorkai_counter.jpg",
-        "img_url_shorikai_stax_1_5": "/static/shorikai_stax_1_show/shorkai_removal.jpg",
-
-        "content_shorikai_stax_1_6": "赚牌&法术力引擎",
-        "img_url_shorikai_stax_1_6": "/static/shorikai_stax_1_show/shorkai_draw.jpg",
 
         "content_shorikai_stax_1_7": "实用法术&导师",
         "img_url_shorikai_stax_1_7": "/static/shorikai_stax_1_show/shorkai_tutor.jpg",
@@ -405,6 +401,76 @@ def shorikai_stax_1_show():
         "img_url_shorikai_stax_1_10": "/static/shorikai_stax_1_show/shorkai_tezz.jpg",
         }
     return render_template("shorikai_stax_1.html", post=post)
+
+@app.route('/articles/08')
+def hottoys_berserker():
+    post = {
+        "heading": "Hot Toys 贝塞克人偶展示",
+        "author": "NeoNought",
+        "categories": ["Hot Toys", "Neo's Collection"],
+        "date": "Dec 10 2025",
+
+        "content_hottosys_berserker_0": textwrap.dedent('''\
+        ''').strip(),
+    }
+
+    return render_template("hottosys_berserker.html", post=post)
+
+@app.route('/articles/09')
+def cedh_kinnan_show():
+    post = {
+        "heading": "万智牌cEDH持绊逸才季宁套牌展示",
+        "author": "NeoNought",
+        "categories": ["Magic the Gathering", "Trading Card Games", "Neo's Collection"],
+        "date": "Dec 15 2025",
+
+        "content_cedh_kinnan_show_0": textwrap.dedent('''\
+        ''').strip(),
+    }
+    return render_template("cedh_kinnan_show.html", post=post)
+
+@app.route('/articles/10')
+def cedh_blue_farm_show():
+    post = {
+        "heading": "万智牌cEDH堤谟娜/寇姆(Blue Farm)套牌展示",
+        "author": "NeoNought",
+        "categories": ["Magic the Gathering", "Trading Card Games", "Neo's Collection"],
+        "date": "Dec 15 2025",
+
+        "content_cedh_blue_farm_show_0": textwrap.dedent('''\
+        ''').strip(),
+    }
+    return render_template("cedh_blue_farm_show.html", post=post)
+
+
+
+
+
+
+
+
+
+
+# 分类页面
+@app.route('/category/<category_name>')
+def show_category(category_name):
+    post = {
+        "heading": f"{category_name} | 分类",
+    }
+    '''
+    param category_name: 用户点击一个分类，展示所有属于这个分类的文章
+
+    '''
+    # 从 JSON 文件读取文章列表
+    with open('articles.json', 'r', encoding='utf-8') as f:
+        all_articles = json.load(f)
+
+    # 筛选出属于这个分类的文章
+    filtered_articles = [
+        a for a in all_articles
+        if (category_name == a.get('category', '')) or (category_name in a.get('categories', []))
+    ]
+    return render_template('category.html', articles=filtered_articles, category=category_name, post=post)
 
 
 

@@ -9,7 +9,10 @@
 <!-- 文章元信息 -->
 <div class="meta">
     <strong>作者：</strong>{{ post.author }} |
-    <strong>分类：</strong>{{ post.category }} |
+    <strong>分类：</strong>
+    {% for category in post.categories %}
+        <a href="{{ url_for('show_category', category_name=category) }}">{{ category }}</a>{% if not loop.last %}, {% endif %}
+    {% endfor %} |
     <strong>日期：</strong>{{ post.date }}
 </div>
 

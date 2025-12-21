@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+<!-- 填充浏览器标题到base -->
+{% block title %}{{ category }} - Neo's Blog{% endblock %}
+
+<!-- 填充标题到base -->
+{% block page_heading %}
+    <span class="index-page-Neos-Blog">Neo's Blog</span>
+{% endblock %}
+
+<!-- 填充内容到base -->
+{% block content %}
+
+<!-- 分类标题 -->
+<h1>分类：{{ category }}</h1>
+
+<!-- 文章列表 -->
+{% if articles %}
+    {% for article in articles %}
+        <a href="{{ article.url }}">{{ loop.index }}. {{ article.title }}</a><br>
+    {% endfor %}
+{% else %}
+    <p>该分类下暂无文章。</p>
+{% endif %}
+
+{% endblock %}

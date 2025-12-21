@@ -92,11 +92,14 @@ a {
     color: #556B2F;          /* 修改为深灰色或其他你想要的颜色 */
 }
 
+/* 鼠标悬停变红 */
+/* 悬停下划线 */
 a:hover {
-    color: #CC0000;          /* 鼠标悬停时变红 */
-    text-decoration: underline;  /* 悬停时添加下划线（可选） */
+    color: #CC0000;
+    text-decoration: underline;
 }
 
+/* Neo's Blog 标题样式 */
 .index-page-Neos-Blog {
   font-family: "Courier New", Courier, "Fira Code", "Source Code Pro", monospace;
 }
