@@ -8,16 +8,15 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    post = {
-        "heading": "Index page | 根目录页",
+    post_data = {
+        "heading": "Neo's Blog Index Page | 根目录页"
     }
-    return render_template('index.html', post=post)
-
-
+    return render_template('index.html', post=post_data)
 
 @app.route('/articles/00')
 def testing_page():
-    post = {
+    post_data = {
+        "title": "Neo's Blog 测试页面",
         "heading": f"This is the blog testing page | 测试页面",
         "author": "NeoNought",
         "categories": ["Computer Science"], 
@@ -33,11 +32,11 @@ def testing_page():
         ''',
         "image_url": "/static/testPic.png"
     }
-    return render_template('testing_page.html', post=post)
+    return render_template('testing_page.html', post=post_data)
 
 @app.route('/articles/01')
 def death_stranding1():
-    post = {
+    post_data = {
         "heading": "一年前在死亡搁浅留下的建筑和指示牌",
         "author": "NeoNought",
         "categories": ["Video Games"], 
@@ -62,7 +61,7 @@ def death_stranding1():
 
         "image_url4": "/static/ds1/ds1.jpg",
     }
-    return render_template("death_stranding1.html", post=post)
+    return render_template("death_stranding1.html", post=post_data)
 
 @app.route('/articles/02')
 def gamma_doppler():
@@ -79,7 +78,7 @@ def gamma_doppler():
                             <a href="/articles/gut">穿肠刀</a>，
                             <a href="/articles/glock18">格洛克18</a>'''
     
-    post = {
+    post_data = {
         "heading": "CS2 多普勒&伽马多普勒款式挑选指南",
         "author": "NeoNought",
         "date": "June 31 2025",
@@ -171,12 +170,12 @@ def gamma_doppler():
         "content15": "宝石刀的黑斑主要影响整体观感。",
         "image_url_gd_13": "/static/gamma_doppler/black1.jpg",
     }
-    return render_template("gamma_doppler.html", post=post)
+    return render_template("gamma_doppler.html", post=post_data)
 
 #### 文章03 05 06 都没开始写
 @app.route('/articles/03')
 def blue_farm_primer():
-    post = {
+    post_data = {
         "heading": "万智牌 cEDH Blue Farm 套牌指南",
         "author": "NeoNought",
         "categories": ["Magic the Gathering", "Trading Card Games"],
@@ -232,11 +231,11 @@ def blue_farm_primer():
         本文持续更新中，更多详细内容将陆续补充...
         '''
     }
-    return render_template("blue_farm_primer.html", post=post)
+    return render_template("blue_farm_primer.html", post=post_data)
 
 @app.route('/articles/04')
 def neos_cs2_inv():
-    post = {
+    post_data = {
         "heading": "2025年CS2自用主战武器皮肤纪念",
         "author": "NeoNought",
         "categories": ["Video Games"],
@@ -330,11 +329,11 @@ def neos_cs2_inv():
 
 
     }
-    return render_template("neos_cs2_inv.html", post=post)
+    return render_template("neos_cs2_inv.html", post=post_data)
 
 @app.route('/articles/05')
 def kinnan_cedh_primer():
-    post = {
+    post_data = {
         "heading": "万智牌 cEDH Kinnan 套牌指南",
         "author": "NeoNought",
         "categories": ["Magic the Gathering", "Trading Card Games"],
@@ -344,11 +343,11 @@ def kinnan_cedh_primer():
         这是一套以 Kinnan, Bonder Prodigy 为指挥官的 cEDH 套牌指南。还没开始的
         ''',
     }
-    return render_template("kinnan_cedh.html", post=post)
+    return render_template("kinnan_cedh.html", post=post_data)
 
 @app.route('/articles/06')
 def cs_market_crash():
-    post = {
+    post_data = {
         "heading": "2025年CS2饰品市场崩盘分析",
         "author": "NeoNought",
         "categories": ["Video Games"],
@@ -358,11 +357,11 @@ def cs_market_crash():
         2025年10月末，CS2饰品市场经历了一次大规模的价格崩盘，本文将分析其原因和影响。
         ''',
     }
-    return render_template("cs_market_crash.html", post=post)
+    return render_template("cs_market_crash.html", post=post_data)
 
 @app.route('/articles/07')
 def shorikai_stax_1_show():
-    post = {
+    post_data = {
         "heading": "万智牌EDH(8分/Challenge/Optimised)创机胜利械套牌展示",
         "author": "NeoNought",
         "categories": ["Magic the Gathering", "Trading Card Games", "Neo's Collection"],
@@ -400,12 +399,12 @@ def shorikai_stax_1_show():
         "img_url_shorikai_stax_1_9": "/static/shorikai_stax_1_show/shorkai_mox_opal.jpg",
         "img_url_shorikai_stax_1_10": "/static/shorikai_stax_1_show/shorkai_tezz.jpg",
         }
-    return render_template("shorikai_stax_1.html", post=post)
+    return render_template("shorikai_stax_1.html", post=post_data)
 
 @app.route('/articles/08')
 def hottoys_berserker():
-    post = {
-        "heading": "Hot Toys 贝塞克人偶展示",
+    post_data = {
+        "heading": "Hot Toys 1/6 Berserker Predator Figure",
         "author": "NeoNought",
         "categories": ["Hot Toys", "Neo's Collection"],
         "date": "Dec 10 2025",
@@ -414,11 +413,11 @@ def hottoys_berserker():
         ''').strip(),
     }
 
-    return render_template("hottosys_berserker.html", post=post)
+    return render_template("hottosys_berserker.html", post=post_data)
 
 @app.route('/articles/09')
 def cedh_kinnan_show():
-    post = {
+    post_data = {
         "heading": "万智牌cEDH持绊逸才季宁套牌展示",
         "author": "NeoNought",
         "categories": ["Magic the Gathering", "Trading Card Games", "Neo's Collection"],
@@ -427,11 +426,11 @@ def cedh_kinnan_show():
         "content_cedh_kinnan_show_0": textwrap.dedent('''\
         ''').strip(),
     }
-    return render_template("cedh_kinnan_show.html", post=post)
+    return render_template("cedh_kinnan_show.html", post=post_data)
 
 @app.route('/articles/10')
 def cedh_blue_farm_show():
-    post = {
+    post_data = {
         "heading": "万智牌cEDH堤谟娜/寇姆(Blue Farm)套牌展示",
         "author": "NeoNought",
         "categories": ["Magic the Gathering", "Trading Card Games", "Neo's Collection"],
@@ -440,7 +439,7 @@ def cedh_blue_farm_show():
         "content_cedh_blue_farm_show_0": textwrap.dedent('''\
         ''').strip(),
     }
-    return render_template("cedh_blue_farm_show.html", post=post)
+    return render_template("cedh_blue_farm_show.html", post=post_data)
 
 
 
@@ -454,7 +453,7 @@ def cedh_blue_farm_show():
 # 分类页面
 @app.route('/category/<category_name>')
 def show_category(category_name):
-    post = {
+    post_data = {
         "heading": f"{category_name} | 分类",
     }
     '''
@@ -470,10 +469,11 @@ def show_category(category_name):
         a for a in all_articles
         if (category_name == a.get('category', '')) or (category_name in a.get('categories', []))
     ]
-    return render_template('category.html', articles=filtered_articles, category=category_name, post=post)
+    return render_template('category.html', articles=filtered_articles, category=category_name, post=post_data)
 
 
 
 
 if __name__ == '__main__':
     app.run(debug=True)
+

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ post.heading }}
+{% endblock %}
+
+{% block page_heading %}
+    {{ post.heading }}
+{% endblock %}
+
+{% block content %}
+<div class="meta">
+    📅 {{ post.date }} &nbsp;&nbsp; ✍️ {{ post.author }} &nbsp;&nbsp; 🗂️
+    {% for category in post.categories %}
+        <a href="{{ url_for('show_category', category_name=category) }}">{{ category }}</a>{% if not loop.last %}, {% endif %}
+    {% endfor %}
+</div>
+
+<div class="content0">
+    <p>{{ post.content_hottosys_berserker_0 | trim | replace('\n', '<br>') | safe }}</p>
+</div>
+
+{% endblock %}
