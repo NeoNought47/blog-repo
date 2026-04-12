@@ -1,48 +1,57 @@
 [
   {
     "title": "一年前在死亡搁浅留下的建筑和指示牌",
-    "category": "Video Games",
+    "categories": ["Video Games"],
     "url": "/articles/01"
   },
   {
-    "title": "CS2多普勒&伽马多普勒款式模版挑选指南",
-    "category": "Video Games",
+    "title": "CS2 多普勒&伽马多普勒款式挑选指南",
+    "categories": ["Video Games"],
     "url": "/articles/02"
   },
   {
     "title": "万智牌 cEDH Blue Farm 套牌指南",
-    "categories": [
-      "Magic the Gathering",
-      "Trading Card Games"
-    ],
+    "categories": ["Magic the Gathering", "Trading Card Games"],
     "url": "/articles/03"
   },
   {
     "title": "2025年CS2自用主战武器皮肤纪念",
-    "category": "Video Games",
+    "categories": ["Video Games"],
     "url": "/articles/04"
   },
   {
     "title": "万智牌 cEDH Kinnan 套牌指南",
-    "categories": [
-      "Magic the Gathering",
-      "Trading Card Games"
-    ],
+    "categories": ["Magic the Gathering", "Trading Card Games"],
     "url": "/articles/05"
   },
   {
-    "title": "2025年10月23日CSGO饰品市场崩盘",
-    "category": "Video Games",
+    "title": "2025年CS2饰品市场崩盘分析",
+    "categories": ["Video Games"],
     "url": "/articles/06"
   },
   {
-    "title": "万智牌EDH创机胜利械套牌展示",
-    "categories": [
-      "Magic the Gathering",
-      "Trading Card Games",
-      "Neo's Collection"
-    ],
+    "title": "万智牌EDH(8分/Challenge/Optimised)创机胜利械套牌展示",
+    "categories": ["Magic the Gathering", "Trading Card Games", "Neo's Collection"],
     "url": "/articles/07"
+  },
+  {
+    "title": "Hot Toys 1/6 Berserker Predator Figure",
+    "categories": ["Hot Toys", "Neo's Collection"],
+    "url": "/articles/08"
+  },
+  {
+    "title": "万智牌cEDH持绊逸才季宁套牌展示",
+    "categories": ["Magic the Gathering", "Trading Card Games", "Neo's Collection"],
+    "url": "/articles/09"
+  },
+  {
+    "title": "万智牌cEDH堤谟娜/寇姆(Blue Farm)套牌展示",
+    "categories": ["Magic the Gathering", "Trading Card Games", "Neo's Collection"],
+    "url": "/articles/10"
+  },
+  {
+    "title": "TryHackMe Room - Metasploit: Exploitation",
+    "categories": ["Cybersecurity", "Learning Notes"],
+    "url": "/articles/md/tryhackme-room-metasploit-exploitation"
   }
-  
 ]

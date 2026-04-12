@@ -4,7 +4,7 @@
 
 <!-- block page_heading 是真正的标题 -->
 {% block page_heading %}
-    {{ post.heading }}
+    <span class="index-page-Neos-Blog">{{ post.heading }}</span>
 {% endblock %}
 
 <!-- 填充内容到base -->
@@ -25,5 +25,6 @@
 <a href="{{ url_for('hottoys_berserker') }}">5. Hot Toys Berserker Predator</a> <br>
 <a href="{{ url_for('cedh_kinnan_show') }}">6. 万智牌cEDH持绊逸才季宁套牌展示</a> <br>
 <a href="{{ url_for('cedh_blue_farm_show') }}">7. 万智牌cEDH堤谟娜/寇姆(Blue Farm)套牌展示</a> <br>
+<a href="{{ url_for('md_article', slug='tryhackme-room-metasploit-exploitation') }}">8. Metasploit 使用指南</a> <br>
 
 {% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block page_heading %}{{ post.heading }}{% endblock %}
+
+{% block content %}
+<p class="meta">{{ post.author }} · {{ post.date }}</p>
+
+<div class="md-content">
+    {{ content | safe }}
+</div>
+{% endblock %}

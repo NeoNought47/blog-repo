@@ -9,7 +9,7 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     post_data = {
-        "heading": "Neo's Blog Index Page | 根目录页"
+        "heading": "Neo's Blog"
     }
     return render_template('index.html', post=post_data)
 
@@ -442,15 +442,8 @@ def cedh_blue_farm_show():
     return render_template("cedh_blue_farm_show.html", post=post_data)
 
 
-
-
-
-
-
-
-
-
-# 分类页面
+# 分类页面功能
+# 就是在一个新的路由上面显示出用户点击的那个种类下的所有文章
 @app.route('/category/<category_name>')
 def show_category(category_name):
     post_data = {
@@ -458,20 +451,60 @@ def show_category(category_name):
     }
     '''
     param category_name: 用户点击一个分类，展示所有属于这个分类的文章
-
     '''
-    # 从 JSON 文件读取文章列表
+    # 从JSON文件里读取文章列表以及分类信息
     with open('articles.json', 'r', encoding='utf-8') as f:
-        all_articles = json.load(f)
+        all_articles = json.load(f) # 把文件里的 JSON 文本转成 Python 的列表/字典
 
     # 筛选出属于这个分类的文章
-    filtered_articles = [
-        a for a in all_articles
-        if (category_name == a.get('category', '')) or (category_name in a.get('categories', []))
-    ]
+    filtered_articles = []
+    for a in all_articles:
+        if (category_name == a.get('category', '')) or (category_name in a.get('categories', [])):
+            filtered_articles.append(a)
+
     return render_template('category.html', articles=filtered_articles, category=category_name, post=post_data)
 
 
+# Markdown 文章路由
+@app.route('/articles/md/<slug>')
+def md_article(slug):
+    import os, re
+
+    def to_slug(filename):
+        name = os.path.splitext(filename)[0]
+        name = name.lower()
+        name = re.sub(r'[^a-z0-9]+', '-', name)
+        return name.strip('-')
+
+    # 先尝试直接匹配
+    filepath = os.path.join('articles', f'{slug}.md')
+    if not os.path.exists(filepath):
+        # 搜索 articles/ 里 slug 匹配的文件
+        filepath = None
+        for fname in os.listdir('articles'):
+            if fname.endswith('.md') and to_slug(fname) == slug:
+                filepath = os.path.join('articles', fname)
+                break
+    if not filepath:
+        return "文章不存在", 404
+    with open(filepath, 'r', encoding='utf-8') as f:
+        raw = f.read()
+    # 读取第一个 # 标题作为文章标题，并从正文中去掉
+    title = slug
+    lines = raw.splitlines()
+    for i, line in enumerate(lines):
+        if line.startswith('# '):
+            title = line[2:].strip()
+            lines.pop(i)
+            break
+    content = markdown.markdown('\n'.join(lines), extensions=['fenced_code', 'tables'])
+    post_data = {
+        "title": title,
+        "heading": title,
+        "author": "NeoNought",
+        "date": "",
+    }
+    return render_template('md_article.html', post=post_data, content=content)
 
 
 if __name__ == '__main__':

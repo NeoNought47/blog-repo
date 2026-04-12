@@ -12,7 +12,7 @@
 {% block content %}
 
 <!-- 分类标题 -->
-<h1>分类：{{ category }}</h1>
+<h1>文章分类：{{ category }}</h1>
 
 <!-- 文章列表 -->
 {% if articles %}
@@ -20,7 +20,7 @@
         <a href="{{ article.url }}">{{ loop.index }}. {{ article.title }}</a><br>
     {% endfor %}
 {% else %}
-    <p>该分类下暂无文章。</p>
+    <p>该分类下暂无文章</p>
 {% endif %}
 
 {% endblock %}

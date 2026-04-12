@@ -1,3 +1,49 @@
+// ===== 图片点击放大 =====
+const overlay = document.createElement('div');
+overlay.id = 'img-overlay';
+const overlayImg = document.createElement('img');
+overlay.appendChild(overlayImg);
+document.body.appendChild(overlay);
+
+document.querySelectorAll('img').forEach(function(img) {
+  if (img.classList.contains('icon-img')) return;
+  img.style.cursor = 'zoom-in';
+  img.addEventListener('click', function() {
+    overlayImg.src = img.src;
+    overlay.classList.add('active');
+  });
+});
+
+overlay.addEventListener('click', function() {
+  overlay.classList.remove('active');
+});
+
+// ===== 回到顶部按钮 =====
+const topBtn = document.createElement('button');
+topBtn.id = 'back-to-top';
+topBtn.textContent = '↑';
+document.body.appendChild(topBtn);
+
+window.addEventListener('scroll', function() {
+  topBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
+});
+
+topBtn.addEventListener('click', function() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// ===== 阅读进度条 =====
+const bar = document.createElement('div');
+bar.id = 'progress-bar';
+document.body.appendChild(bar);
+
+window.addEventListener('scroll', function() {
+  const scrollTop = window.scrollY;
+  const docHeight = document.body.scrollHeight - window.innerHeight;
+  const progress = (scrollTop / docHeight) * 100;
+  bar.style.width = progress + '%';
+});
+
 // ===== 夜间模式切换功能 =====
 
 // 等待页面加载完成后执行

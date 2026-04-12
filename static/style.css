@@ -1,3 +1,128 @@
+/* ===== Markdown 文章样式 ===== */
+.md-content pre {
+  background-color: #1e1e1e;
+  color: #d4d4d4;
+  padding: 1em;
+  border-radius: 6px;
+  overflow-x: auto;
+  font-family: "Fira Code", "Source Code Pro", monospace;
+  font-size: 0.9em;
+  line-height: 1.6;
+  margin: 1em 0;
+}
+
+.md-content code {
+  font-family: "Fira Code", "Source Code Pro", monospace;
+  font-size: 0.9em;
+}
+
+.md-content p code, .md-content li code {
+  background-color: #fde8e8;
+  color: #c0392b;
+  padding: 0.1em 0.4em;
+  border-radius: 3px;
+}
+
+body.dark-mode .md-content p code,
+body.dark-mode .md-content li code {
+  background-color: #2a2a2a;
+}
+
+.md-content h1, .md-content h2, .md-content h3 {
+  margin-top: 1.5em;
+}
+
+.md-content table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1em 0;
+}
+
+.md-content th, .md-content td {
+  border: 1px solid #ccc;
+  padding: 0.5em 1em;
+  text-align: left;
+}
+
+.md-content th {
+  background-color: #f5f5f5;
+}
+
+body.dark-mode .md-content th {
+  background-color: #2a2a2a;
+}
+
+body.dark-mode .md-content th,
+body.dark-mode .md-content td {
+  border-color: #444;
+}
+
+/* ===== 图片放大遮罩 ===== */
+#img-overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.85);
+  z-index: 1000;
+  cursor: zoom-out;
+  justify-content: center;
+  align-items: center;
+}
+
+#img-overlay.active {
+  display: flex;
+}
+
+#img-overlay img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 6px;
+  width: auto;
+  margin: 0;
+}
+
+/* ===== 回到顶部按钮 ===== */
+#back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 20px;
+  background-color: transparent;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  cursor: pointer;
+  display: none;
+  transition: all 0.3s ease;
+}
+
+#back-to-top:hover {
+  background-color: #f0f0f0;
+  transform: scale(1.1);
+}
+
+body.dark-mode #back-to-top {
+  border-color: #666;
+}
+
+body.dark-mode #back-to-top:hover {
+  background-color: #2a2a2a;
+}
+
+/* ===== 阅读进度条 ===== */
+#progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background-color: rgb(235, 79, 171);
+  width: 0%;
+  z-index: 999;
+  transition: width 0.1s;
+}
+
 /* ===== 全站基础 ===== */
 body {
   font-family:
@@ -89,22 +214,18 @@ img {
 }
 
 a {
-    color: #556B2F;          /* 修改为深灰色或其他你想要的颜色 */
+    color: rgb(235, 79, 171);
 }
 
-/* 鼠标悬停变红 */
-/* 悬停下划线 */
 a:hover {
-    color: #CC0000;
+    color: rgb(246, 200, 103);
     text-decoration: underline;
 }
 
 /* Neo's Blog 标题样式 */
 .index-page-Neos-Blog {
-  font-family: "Courier New", Courier, "Fira Code", "Source Code Pro", monospace;
-}
-.index-page-Neos-Blog {
-  font-size: 1.5em;
+  font-family: "Honk", system-ui;
+  font-size: 3em;
 }
 
 /* ===== 夜间模式切换按钮 ===== */
@@ -134,11 +255,11 @@ body.dark-mode {
 }
 
 body.dark-mode a {
-  color: #88b388;
+  color: rgb(235, 79, 171);
 }
 
 body.dark-mode a:hover {
-  color: #ff6b6b;
+  color: rgb(246, 200, 103);
 }
 
 body.dark-mode hr {
